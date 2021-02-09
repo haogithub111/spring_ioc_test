@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 定义一个bean -->
+    <bean id="narCodeService" class="service.NarCodeServiceImpl"/>
+    <bean id="narCodeService2" class="service.NarCodeServiceImpl2"/>
+
+    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" />
+
+    <bean id="beanLifecycle" class="model.BeanLifecycle" init-method="init" destroy-method="close">
+        <property name="name" value="张三"></property>
+        <property name="sex" value="男"></property>
+    </bean>
+
+    <bean id="postProcessor" class="model.PostProcessor"/>
+</beans>
